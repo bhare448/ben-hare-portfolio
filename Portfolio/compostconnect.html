@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compost Connect – Ben Hare Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .project-header {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .project-hero {
+      width: 100%;
+      max-height: 300px;
+      max-width: 300px;
+      margin: 40px 0;
+      border-radius: 12px;
+    }
+
+    .process-section {
+      margin: 60px 0;
+    }
+
+    .process-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .process-img {
+      flex: 1 1 300px;
+      max-width: 50%;
+      max-height: 50%;
+      border-radius: 8px;
+      height: 200px;
+    }
+
+    .text-block {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .process-img {
+        height: 180px;
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .project-header {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    .slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  width: auto;
+  height: auto;
+  margin: auto;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Arrows */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 3px;
+  user-select: none;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+      <ul style="list-style: none; padding: 20px 40px; margin: 0; display: flex; gap: 40px; border-bottom: 1px solid #eee; justify-content: flex-end;">
+        <li><a href="index.html" style="text-decoration: none; color: #333; font-weight: 500; letter-spacing: 0.05em;">Home</a></li>
+        <div style="display: flex; gap: 20px; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="pdf.png" alt="pdf" style="width: 15px; height: 20px;">
+            <li><a href="benhare_resume_2025.pdf" style="text-decoration: none; color: #333; font-weight: 500; letter-spacing: 0.05em;">Resume</a></li>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="linkedin.png" alt="linkedin" style="width: 15px; height: 20px;">
+            <li><a href="https://www.linkedin.com/in/benjamin-hare-a34074296/" style="text-decoration: none; color: #333; font-weight: 500; letter-spacing: 0.05em;">LinkedIn</a></li>
+          </div>
+        </div>
+      </ul> 
+  </nav>
+
+  <main>
+    <section class="project-header">
+      <h1>Compost Connect</h1>
+      <p>An app designed for my capstone project that teaches users about composting through bite-sized lessons.</p>
+      <img src="compostconnect.jpg" alt="Main Project Visual" class="project-hero">
+    </section>
+
+    <section class="text-block">
+      <h2>Project Overview</h2>
+      <p>This app was created for my senior capstone project. The original purpose of the app was to teach people about the environmental benefits of compost and build a community. By the end of the class, my group shifted focus to make it an educational app that uses gamification and bite-sized lessons to teach users how to compost.</p>
+    </section>
+
+    <section class="process-section">
+      <div class="text-block">
+        <h2>Design Process</h2>
+        <p style="font-weight: bold;">Ideation:</p>
+        <ul>
+          <li>
+            My group began our brainstorming by listing as many problems we could think of and write them on post-it notes. After narrowing it down, we all agreed that composting may be a good concept to base our project around, since even though it has significant environmental benefits, not many people know how to do it or even know what it is.
+          </li>
+        </ul>
+        <p style="font-weight: bold;">Research:</p>
+        <ul>
+          <li>
+            Most of our research came from questionnaires and usability tests that we conducted using basic wireframes and prototypes to not only determine if our project is desireable, but what kinds of things users may want in an app like this.
+          </li>
+          <li>
+            Our test results suggested that there was a market for our app. Most of our test participants were pleased with the wireframes and claimed they would use the app themselves.
+          </li>
+        </ul>
+        <p style="font-weight: bold;">Brainstorming:</p>
+        <ul>
+          <li>
+            Though our test participants were mostly pleased with our app, there was some confusion over some of the gamification mechanics and some were unsure if the community features, such as posts and likes, may not be necessary. Going forward, we were going to have to take these critics into consideration and brainstorm how to make our app more effective.
+          </li>
+          <li>
+            After a few more prototypes and some suggestions from our professor, we decided that we were going to get rid of the community features and focus entirely on the educational aspect of the app.
+          </li>
+          <li>
+            We decided that we were going to have to figure out some kind of system for the gamification mechanics now that we were going this new route. We always wanted to have some kind of point system to reward our users for going through the lessons, but did not know how to implement it. Eventually, we decided on having a digital tree that users would be able to grow using the points that they have earned.
+          </li>
+        </ul>
+        <p style="font-weight: bold;">Prototype:</p>
+        <ul>
+          <li>
+            When creating the final, functional prototype, I was put in charge of making the whole wireframe interactive and implementing the screens for the tree-growing gamification mechanics.
+          </li>
+        </ul>
+      </div>
+      
+    </section>
+
+    <section class="text-block">
+      <h2>Final Outcome</h2>
+      <p>This project taught me a lot about project management and working in teams. While it was very difficult at times, it provided us with a lot of experience and showed us what it would be like in the work force. In the end, we made something we were all proud of.</p>
+    </section>
+    <div class="button" style="display: flex; justify-content: center; margin-top: 40px;">
+        <a href="https://www.figma.com/proto/6xrjA2aeoThOHgku1TfPiV/Compost-Connect?node-id=42-165&starting-point-node-id=42%3A165&t=0Zsjjagr2TJGEjCZ-1" class="cta-button">View Full Prototype</a>
+      </div>
+    <div class="button" style="display: flex; justify-content: center; margin-top: 40px;">
+        <a href="Comp Inquiry Poster.pdf" class="cta-button">View Inquiry Poster</a>
+      </div>
+  </main>
+  <section id="projects-physical">
+    <h2 class="section-title">Physical Projects</h2>
+    <div class="project-grid">
+      <a href="jukebox.html" class="project-link">
+        <div class="project">
+          <img src="jukebox.jpg" alt="Vale Jukebox" class="project-img">
+          <div>
+            <h3>VALE Jukebox</h3>
+            <p>Mini Jukebox designed to promote the VALE Music Group at Lebanon Valley College.</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="toy.html" class="project-link">
+        <div class="project">
+          <img src="KidToy.png" alt="Children's Toy" class="project-img">
+          <div>
+            <h3>Children's Toy Project</h3>
+            <p>Prototype for a project where we were tasked with designing a children's toy.</p>
+          </div>
+        </div>
+      </a>
+      
+    </div>
+  </section>
+  <section id="projects-digital">
+    <h2 class="section-title">Digital Prototypes and Wireframes</h2>
+
+    <div class="project-grid">
+      <a href="compostconnect.html" class="project-link">
+        <div class="project">
+          <img src="compostconnect.jpg" alt="Compost Connect" class="project-img">
+          <div>
+            <h3>Compost Connect</h3>
+            <p>An app designed for my capstone project that teaches users about composting through bite-sized lessons.</p>
+          </div>
+        </div>
+      </a>
+
+        <a href="doorbud.html" class="project-link">
+          <div class="project">
+            <img src="DoorBud.png" alt="DoorBud" class="project-img">
+            <div>
+              <h3>DoorBud</h3>
+              <p>Wireframe for a fun alternative to a smart doorbell.</p>
+            </div>
+          </div>
+        </a>
+        <a href="jeopardy.html" class="project-link">
+          <div class="project">
+            <img src="jeopardy.png" alt="Disney Jeopardy" class="project-img">
+            <div>
+              <h3>Disney Jeopardy</h3>
+              <p>Web-based Jeopardy game made for my Web Design class that tests the user's knowledge of Disney movies.</p>
+            </div>
+          </div>
+        </a>
+        <a href="thermostat.html" class="project-link">
+          <div class="project">
+            <img src="thermoproto.png" alt="Smart Thermostat Wireframe" class="project-img">
+            <div>
+              <h3>Smart Thermostat Wireframe</h3>
+              <p>Wireframe for a smart thermostat made for my Interaction Design Studio class.</p>
+            </div>
+          </div>
+        </a>
+      
+  </section>
+  <section id="projects-graphic">
+    <h2 class="section-title">Graphic Design Projects</h2>
+    <div class="project-grid">
+      <a href="careerpamphlet.html" class="project-link">
+        <div class="project">
+            <img src="pamphletcover.jpeg" alt="Career Center Pamphlets" class="project-img">
+          <div>
+            <h3>Career Center Pamphlets</h3>
+            <p>During my internship, I was asked to redesign pamphlets offered by my school's career center.</p>
+          </div>
+        </div>
+      </a>
+      <a href="mariokartpamphlet.html" class="project-link">
+        <div class="project">
+            <img src="pamphlet.png" alt="Mario Kart 8 Pamphlet" class="project-img">
+            <div>
+             <h3>Mario Kart 8 Pamphlet</h3>
+              <p>Pamphlet that teaches players the basics of playing the video game "Mario Kart 8".</p>
+            </div>
+          </div>
+        </a>
+        <a href="zoologo.html" class="project-link">
+          <div class="project">
+            <img src="color_logo.jpg" alt="Zoo Logo" class="project-img">
+            <div>
+              <h3>Zoo Logo</h3>
+              <p>Zoo Logo designed for my graphic design class.</p>
+            </div>
+          </div>
+        </a>
+      </div>  
+  </section>
+  <footer>
+    <p>
+      <strong>Email:</strong> bhare0414@gmail.com<br>
+      <strong>Phone:</strong> (717)884-1448
+    </p>
+    &copy; 2025 Ben Hare – All rights reserved.
+  </footer>
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+  
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+  
+    function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("slide");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+  </script>  
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VALE Jukebox – Ben Hare Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .project-header {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .project-hero {
+      width: 100%;
+      max-height: 300px;
+      max-width: 300px;
+      margin: 40px 0;
+      border-radius: 12px;
+    }
+
+    .process-section {
+      margin: 60px 0;
+    }
+
+    .process-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .process-img {
+      flex: 1 1 300px;
+      max-width: 50%;
+      max-height: 50%;
+      border-radius: 8px;
+      height: 200px;
+    }
+
+    .text-block {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .process-img {
+        height: 180px;
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .project-header {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    .slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  width: auto;
+  height: auto;
+  margin: auto;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Arrows */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 3px;
+  user-select: none;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+      <ul style="list-style: none; padding: 20px 40px; margin: 0; display: flex; gap: 40px; border-bottom: 1px solid #eee; justify-content: flex-end;">
+        <li><a href="index.html" style="text-decoration: none; color: #333; font-weight: 500; letter-spacing: 0.05em;">Home</a></li>
+        <div style="display: flex; gap: 20px; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="pdf.png" alt="pdf" style="width: 15px; height: 20px;">
+            <li><a href="benhare_resume_2025.pdf" style="text-decoration: none; color: #333; font-weight: 500; letter-spacing: 0.05em;">Resume</a></li>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="linkedin.png" alt="linkedin" style="width: 15px; height: 20px;">
+            <li><a href="https://www.linkedin.com/in/benjamin-hare-a34074296/" style="text-decoration: none; color: #333; font-weight: 500; letter-spacing: 0.05em;">LinkedIn</a></li>
+          </div>
+        </div>
+      </ul> 
+  </nav>
+
+  <main>
+    <section class="project-header">
+      <h1>VALE Jukebox</h1>
+      <p>Mini Jukebox designed to promote the VALE Music Group at Lebanon Valley College.</p>
+      <img src="jukebox.jpg" alt="Main Project Visual" class="project-hero">
+    </section>
+
+    <section class="text-block">
+      <h2>Project Overview</h2>
+      <p>This was my final project for my Exhibit Design class. We were tasked with creating a physical exhibit that could be placed in either our school's admissions office or on the top floor of one of the academic buildings. I chose to create a miniature jukebox to be placed in the admissions office as a way to make prospective students aware of the amazing VALE Music Program while also showcasing the amazing creations that can be made in the Digital Communications and Interaction Design department.</p>
+    </section>
+
+    <section class="process-section">
+      <div class="text-block">
+        <h2>Design Process</h2>
+        <p style="font-weight: bold;">Ideation:</p>
+        <ul>
+          <li>
+            When given the parameters of the project, I first had to consider what kinds of things a prospective student would like to see when touring the school. I also drew from my personal experience and considered what I would have liked to know more about when I first visited the school.
+          </li>
+          <li>
+            The VALE Music Group is a student-run record label and music production group that provides music students the ability to gain real experience in the music industry. It is a great organization that showcases the amazing talent that can be found at Lebanon Valley College. However, I had never heard anything about it until I had started attending the school. Even though I was not a music major, I still wanted to promote this program in some way.
+          </li>
+        </ul>
+        <p style="font-weight: bold;">Research:</p>
+        <ul>
+          <li>
+            We had been studying exhibits throughout the semester, including exhibits found in the Whitaker Center and how they are able to teach through fun, hands-on interactions. I had to ensure that my project reinforced the goal of promoting the VALE Music Group while still keeping it engaging and fun.
+          </li>
+          <li>
+            One of the most important concepts reinforced throughout the class was participatory design. All of the most popular exhibits we studied had a big focus on participation among people, which has proven to be an effective motivator for repeated use of the exhibit.
+          </li>
+        </ul>
+        <p style="font-weight: bold;">Brainstorming:</p>
+        <ul>
+          <li>
+            Using my research, I started sketching out several ideas. My first obstacle was deciding on the best way to showcase what VALE was all about to incoming and prospective students. This was the easiest part, since VALE is responsible for recording and publishing many great songs from the talented artists at LVC. If I could showcase this music, I knew it would get people's attention.
+          </li>
+          <li>
+            After ruminating on this idea for a bit, I came up with the idea of creating some kind of jukebox to showcase the music. In a way, jukeboxes are already fairly similar to exhibits. A single person or group of people go up to a jukebox, choose a song, and then the whole surrounding area experiences and participates as a result of the choice. This idea would provide a fun challenge and incorporate principles of participatory design.
+          </li>
+        </ul>
+        <p style="font-weight: bold;">Prototype:</p>
+        <ul>
+          <li>
+            I went into this knowing that it would be difficult, as I have never attempted anything like this before and would have to use technology that I was unfamiliar with. I started my prototyping process by making a wireframe that showcases the design and explains how it would work. I made the design of the jukebox a small cube to not only make it more doable given the time constraints, but also giving it a bit of novelty. Instead of using a screen or remote to change the songs, I thought it would be more fun and novel to have little song cartridges that users would insert into the top of the jukebox.
+          </li>
+          <li>
+            In order to accomplish this and make the device headless, I would have to use some kind of micro computer as well as NFC chips. I did not have much experience with either of these tools, but I knew I could do some cool things with both of them. The school provided me with a Raspberry Pi 3, a speaker, an amplifier, an NFC reader, and NFC chips.
+          </li>
+          <li>
+            The first and most difficult task I needed to accomplish was getting the NFC reader to connect to the Raspberry Pi and read the NFC chips. Though it took a bit of time and perseverence, I was eventually able to get it working and each created a python script that would tell me the ID of each of the NFC chips, which I could use to map an mp3 file to each of the chips. In order to make it headless, I would have to make it so that the python script to read the chips boots up automatically along with the Raspberry Pi. This was done relatively easily through a shell script.
+          </li>
+          <li>
+            With the technology working alright, the next step was to make the casing. I was much less intimidated by this part since I have had plenty of experience with laser cutters previous to this. My professor showed me this helpful tool online that created an svg of a box based on your specifications. Using this, I was able to easily cut out a box made from acrylic that I then glued together. The song cartridges were made from thick corrugated cardboard that I engraved album art on and inserted the NFC chips in the bottom.
+          </li>
+          <li>
+            Lastly, I used regular cardboard to place around the cartridge slot which would not only hold the cartridge in place, but also have the NFC reader attached to it so that it would read the chips once the cartridge was inserted.
+          </li>
+        </ul>
+      </div>
+      <div class="slideshow-container">
+        <div class="slide fade">
+          <img src="jukebox1.png" alt="Step 1">
+        </div>
+        <div class="slide fade">
+          <img src="jukebox2.jpg" alt="Step 2">
+        </div>
+        <div class="slide fade">
+          <img src="jukebox3.jpg" alt="Step 3">
+        </div>
+      
+        <!-- Next and prev buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      
+    </section>
+
+    <section class="text-block">
+      <h2>Final Outcome</h2>
+      <p>I was very pleased with how the final product turned out considering the time constraints and lack of experience. Although it was a challenge, it helped improve my skills quite a bit and also gave me experience with designing for different audiences. If I do anything differently with this project, I would focus on making the cartridge slot more stable, as that was the one part I had to rush on a little bit, but overall I am proud that I was able to create a fully functioning exhibit.</p>
+      <div class="button" style="display: flex; justify-content: center; margin-top: 40px;">
+        <a href="Exhibit Design Final Poster.pdf" class="cta-button">View Full Project</a>
+      </div>
+    <div class="video-wrapper">
+      <video controls>
+        <source src="Exhibit Design Final Video.mov" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    </section>
+  </main>
+  <section id="projects-physical">
+    <h2 class="section-title">Physical Projects</h2>
+    <div class="project-grid">
+      <a href="jukebox.html" class="project-link">
+        <div class="project">
+          <img src="jukebox.jpg" alt="Vale Jukebox" class="project-img">
+          <div>
+            <h3>VALE Jukebox</h3>
+            <p>Mini Jukebox designed to promote the VALE Music Group at Lebanon Valley College.</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="toy.html" class="project-link">
+        <div class="project">
+          <img src="KidToy.png" alt="Children's Toy" class="project-img">
+          <div>
+            <h3>Children's Toy Project</h3>
+            <p>Prototype for a project where we were tasked with designing a children's toy.</p>
+          </div>
+        </div>
+      </a>
+      
+    </div>
+  </section>
+  <section id="projects-digital">
+    <h2 class="section-title">Digital Prototypes and Wireframes</h2>
+
+    <div class="project-grid">
+      <a href="compostconnect.html" class="project-link">
+        <div class="project">
+          <img src="compostconnect.jpg" alt="Compost Connect" class="project-img">
+          <div>
+            <h3>Compost Connect</h3>
+            <p>An app designed for my capstone project that teaches users about composting through bite-sized lessons.</p>
+          </div>
+        </div>
+      </a>
+
+        <a href="doorbud.html" class="project-link">
+          <div class="project">
+            <img src="DoorBud.png" alt="DoorBud" class="project-img">
+            <div>
+              <h3>DoorBud</h3>
+              <p>Wireframe for a fun alternative to a smart doorbell.</p>
+            </div>
+          </div>
+        </a>
+        <a href="jeopardy.html" class="project-link">
+          <div class="project">
+            <img src="jeopardy.png" alt="Disney Jeopardy" class="project-img">
+            <div>
+              <h3>Disney Jeopardy</h3>
+              <p>Web-based Jeopardy game made for my Web Design class that tests the user's knowledge of Disney movies.</p>
+            </div>
+          </div>
+        </a>
+        <a href="thermostat.html" class="project-link">
+          <div class="project">
+            <img src="thermoproto.png" alt="Smart Thermostat Wireframe" class="project-img">
+            <div>
+              <h3>Smart Thermostat Wireframe</h3>
+              <p>Wireframe for a smart thermostat made for my Interaction Design Studio class.</p>
+            </div>
+          </div>
+        </a>
+      
+  </section>
+  <section id="projects-graphic">
+    <h2 class="section-title">Graphic Design Projects</h2>
+    <div class="project-grid">
+      <a href="careerpamphlet.html" class="project-link">
+        <div class="project">
+            <img src="pamphletcover.jpeg" alt="Career Center Pamphlets" class="project-img">
+          <div>
+            <h3>Career Center Pamphlets</h3>
+            <p>During my internship, I was asked to redesign pamphlets offered by my school's career center.</p>
+          </div>
+        </div>
+      </a>
+      <a href="mariokartpamphlet.html" class="project-link">
+        <div class="project">
+            <img src="pamphlet.png" alt="Mario Kart 8 Pamphlet" class="project-img">
+            <div>
+             <h3>Mario Kart 8 Pamphlet</h3>
+              <p>Pamphlet that teaches players the basics of playing the video game "Mario Kart 8".</p>
+            </div>
+          </div>
+        </a>
+        <a href="zoologo.html" class="project-link">
+          <div class="project">
+            <img src="color_logo.jpg" alt="Zoo Logo" class="project-img">
+            <div>
+              <h3>Zoo Logo</h3>
+              <p>Zoo Logo designed for my graphic design class.</p>
+            </div>
+          </div>
+        </a>
+      </div>  
+  </section>
+  <footer>
+    <p>
+      <strong>Email:</strong> bhare0414@gmail.com<br>
+      <strong>Phone:</strong> (717)884-1448
+    </p>
+    &copy; 2025 Ben Hare – All rights reserved.
+  </footer>
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+  
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+  
+    function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("slide");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+  </script>  
+</body>
+</html>

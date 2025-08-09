@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DoorBud – Ben Hare Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .project-header {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .project-hero {
+      width: 100%;
+      max-height: 300px;
+      max-width: 300px;
+      margin: 40px 0;
+      border-radius: 12px;
+    }
+
+    .process-section {
+      margin: 60px 0;
+    }
+
+    .process-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .process-img {
+      flex: 1 1 300px;
+      max-width: 50%;
+      max-height: 50%;
+      border-radius: 8px;
+      height: 200px;
+    }
+
+    .text-block {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .process-img {
+        height: 180px;
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .project-header {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    .slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  width: auto;
+  height: auto;
+  margin: auto;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Arrows */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 3px;
+  user-select: none;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+      <ul style="list-style: none; padding: 20px 40px; margin: 0; display: flex; gap: 40px; border-bottom: 1px solid #eee; justify-content: flex-end;">
+        <li><a href="index.html" style="text-decoration: none; color: #333; font-weight: 500; letter-spacing: 0.05em;">Home</a></li>
+        <div style="display: flex; gap: 20px; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="pdf.png" alt="pdf" style="width: 15px; height: 20px;">
+            <li><a href="benhare_resume_2025.pdf" style="text-decoration: none; color: #333; font-weight: 500; letter-spacing: 0.05em;">Resume</a></li>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="linkedin.png" alt="linkedin" style="width: 15px; height: 20px;">
+            <li><a href="https://www.linkedin.com/in/benjamin-hare-a34074296/" style="text-decoration: none; color: #333; font-weight: 500; letter-spacing: 0.05em;">LinkedIn</a></li>
+          </div>
+        </div>
+      </ul> 
+  </nav>
+
+  <main>
+    <section class="project-header">
+      <h1>DoorBud</h1>
+      <p>Wireframe for a fun alternative to a smart doorbell designed for my Interaction Design Studio class.</p>
+      <img src="DoorBud.png" alt="Main Project Visual" class="project-hero">
+    </section>
+
+    <section class="text-block">
+      <h2>Project Overview</h2>
+      <p>This project was made for my "Interaction Design Studio" class. The point of this assignment was to consider edge cases when creating designs, meaning to consider errors that may occur at extreme parameters. We were tasked with creating a smart-home device that seamlessly connected to other devices and could help people. I came up with the idea of a smart doorbell camera that prioritizes safety while being easy to use and being aesthetically pleasing.</p>
+    </section>
+
+    <section class="process-section">
+      <div class="text-block">
+        <h2>Design Process</h2>
+        <p style="font-weight: bold;">Ideation:</p>
+        <ul>
+          <li>
+            During the ideation process, I tried to think of existing smart home products and identify any problems that they may have. I eventually considered smart doorbell cameras since they were relatively new and likely to have a number of usability issues.
+          </li>
+        </ul>
+        <p style="font-weight: bold;">Research:</p>
+        <ul>
+          <li>
+            I noticed during my research that while the cameras are effective at detecting activity, it is not able to differentiate between normal and dangerous situations, so it is unlikely to help people if they are in immediate danger or want to stop a crime from occurring.
+          </li>
+        </ul>
+        <p style="font-weight: bold;">Brainstorming:</p>
+        <ul>
+          <li>
+            When coming up with design ideas and functionality, my professor asked us to create sketches and keep in mind how the device will signify changes in state. With this in mind, I thought it would be a fun idea to signify changes in state through the different expressions of a digital face. After this, I had to determine how the mobile app will keep the same branding while still being easy to use.
+          </li>
+          <li>
+            After more sketching, there were a number of functionalities that I wanted to include in the device. First was a digital face that would greet anyone who walks up to the door to let the visitor know that they are being recorded. Second, a timer that starts when movement is detected outside the door that will alert the user if the visitor has not rung the doorbell during that time. Lastly, I wanted to give users the option to call the police if the device enters a state where it believes the user is in danger.
+          </li>
+        </ul>
+        <p style="font-weight: bold;">Prototype:</p>
+        <ul>
+          <li>
+            After the first round of prototyping, suggestions that I received included giving users the option to connect to other video cameras around the house and for more security to be added on the log-in screen, such as two-factor authentication, to keep the recordings more secure.
+          </li>
+          <li>
+            The last prototype included the entire mobile app interface where users could view any footage picked up from the camera, customize the virtual face that appears on the device, and connect any other smart-home devices via bluetooth.
+          </li>
+        </ul>
+      </div>
+      <div class="slideshow-container">
+        <div class="slide fade">
+          <img src="doorbudsketch1.png" alt="Step 1">
+        </div>
+        <div class="slide fade">
+          <img src="doorbudsketch2.png" alt="Step 2">
+        </div>
+        <div class="slide fade">
+          <img src="doorbud1.png" alt="Step 3">
+        </div>
+        <div class="slide fade">
+          <img src="doorbud2.png" alt="Step 4">
+        </div>
+      
+        <!-- Next and prev buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      
+    </section>
+
+    <section class="text-block">
+      <h2>Final Outcome</h2>
+      <p>The final wireframe consists of high-fidelity sketches with detailed content notes explaining how the device and mobile app operates, as well as how users will interact with the device from start state to end state. This project taught me how to identify problems in designs, identify any edge cases, and brainstorm solutions to these problems while keeping it user-friendly.</p>
+      <div class="button" style="display: flex; justify-content: center; margin-top: 40px;">
+        <a href="Edge Case UI Assignment.pdf" class="cta-button">View Full Project</a>
+      </div>
+    </section>
+  </main>
+  <section id="projects-physical">
+    <h2 class="section-title">Physical Projects</h2>
+    <div class="project-grid">
+      <a href="jukebox.html" class="project-link">
+        <div class="project">
+          <img src="jukebox.jpg" alt="Vale Jukebox" class="project-img">
+          <div>
+            <h3>VALE Jukebox</h3>
+            <p>Mini Jukebox designed to promote the VALE Music Group at Lebanon Valley College.</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="toy.html" class="project-link">
+        <div class="project">
+          <img src="KidToy.png" alt="Children's Toy" class="project-img">
+          <div>
+            <h3>Children's Toy Project</h3>
+            <p>Prototype for a project where we were tasked with designing a children's toy.</p>
+          </div>
+        </div>
+      </a>
+      
+    </div>
+  </section>
+  <section id="projects-digital">
+    <h2 class="section-title">Digital Prototypes and Wireframes</h2>
+
+    <div class="project-grid">
+      <a href="compostconnect.html" class="project-link">
+        <div class="project">
+          <img src="compostconnect.jpg" alt="Compost Connect" class="project-img">
+          <div>
+            <h3>Compost Connect</h3>
+            <p>An app designed for my capstone project that teaches users about composting through bite-sized lessons.</p>
+          </div>
+        </div>
+      </a>
+
+        <a href="doorbud.html" class="project-link">
+          <div class="project">
+            <img src="DoorBud.png" alt="DoorBud" class="project-img">
+            <div>
+              <h3>DoorBud</h3>
+              <p>Wireframe for a fun alternative to a smart doorbell.</p>
+            </div>
+          </div>
+        </a>
+        <a href="jeopardy.html" class="project-link">
+          <div class="project">
+            <img src="jeopardy.png" alt="Disney Jeopardy" class="project-img">
+            <div>
+              <h3>Disney Jeopardy</h3>
+              <p>Web-based Jeopardy game made for my Web Design class that tests the user's knowledge of Disney movies.</p>
+            </div>
+          </div>
+        </a>
+        <a href="thermostat.html" class="project-link">
+          <div class="project">
+            <img src="thermoproto.png" alt="Smart Thermostat Wireframe" class="project-img">
+            <div>
+              <h3>Smart Thermostat Wireframe</h3>
+              <p>Wireframe for a smart thermostat made for my Interaction Design Studio class.</p>
+            </div>
+          </div>
+        </a>
+      
+  </section>
+  <section id="projects-graphic">
+    <h2 class="section-title">Graphic Design Projects</h2>
+    <div class="project-grid">
+      <a href="careerpamphlet.html" class="project-link">
+        <div class="project">
+            <img src="pamphletcover.jpeg" alt="Career Center Pamphlets" class="project-img">
+          <div>
+            <h3>Career Center Pamphlets</h3>
+            <p>During my internship, I was asked to redesign pamphlets offered by my school's career center.</p>
+          </div>
+        </div>
+      </a>
+      <a href="mariokartpamphlet.html" class="project-link">
+        <div class="project">
+            <img src="pamphlet.png" alt="Mario Kart 8 Pamphlet" class="project-img">
+            <div>
+             <h3>Mario Kart 8 Pamphlet</h3>
+              <p>Pamphlet that teaches players the basics of playing the video game "Mario Kart 8".</p>
+            </div>
+          </div>
+        </a>
+        <a href="zoologo.html" class="project-link">
+          <div class="project">
+            <img src="color_logo.jpg" alt="Zoo Logo" class="project-img">
+            <div>
+              <h3>Zoo Logo</h3>
+              <p>Zoo Logo designed for my graphic design class.</p>
+            </div>
+          </div>
+        </a>
+      </div>  
+  </section>
+  <footer>
+    <p>
+      <strong>Email:</strong> bhare0414@gmail.com<br>
+      <strong>Phone:</strong> (717)884-1448
+    </p>
+    &copy; 2025 Ben Hare – All rights reserved.
+  </footer>
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+  
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+  
+    function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("slide");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+  </script>  
+</body>
+</html>
