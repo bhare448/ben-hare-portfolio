@@ -104,7 +104,13 @@ footer {
   font-size: 0.9em;
   letter-spacing: 0.05em;
 }
-
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+  margin-top: 40px;
+}
 .video-wrapper {
   display: flex;
   justify-content: center;
@@ -112,7 +118,7 @@ footer {
 }
 
 video {
-  max-width: 50%;
+  max-width: 100%;
   height: auto;
   border-radius: 12px; 
   box-shadow: 0 8px 30px rgba(0,0,0,0.1); 
