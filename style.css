@@ -10,6 +10,47 @@ header {
   background-color: #ececec;
 }
 
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header-text {
+  text-align: left;
+  max-width: 400px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.profile-frame {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.profile-frame img {
+  width: 150%;
+  height: 150%;
+  object-fit: contain;
+  object-position:-35px 20px;
+  transition: transform 0.3s ease; 
+}
+
+
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
 header h1 {
   letter-spacing: 0.05em;
   margin-bottom: 16px;
@@ -122,4 +163,64 @@ video {
   height: auto;
   border-radius: 12px; 
   box-shadow: 0 8px 30px rgba(0,0,0,0.1); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .header-text {
+    text-align: center;
+    max-width: 100%;
+    min-width: auto;
+  }
+  
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+  
+  header {
+    padding: 80px 20px;
+  }
+  
+  section {
+    padding: 0 20px;
+  }
+  
+  .project {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    gap: 20px;
+  }
+  
+  .profile-image {
+    width: 140px;
+    height: 140px;
+  }
+  
+  header {
+    padding: 60px 15px;
+  }
+  
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+  
+  .section-title {
+    font-size: 1.8em;
+  }
+  
+  .project h3 {
+    font-size: 1.2em;
+  }
 }
