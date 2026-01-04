@@ -1,345 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Smart Thermostat Wireframe – Ben Hare Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Thermostat Wireframe — Ben Hare</title>
+
+  <!-- Global stylesheet (your main file) -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Optional webfonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Page-specific styles to implement card layout (centered, narrow) -->
   <style>
-    .project-header {
-      text-align: center;
-      margin-top: 80px;
+    :root{
+      --card-max-width: 900px;
+      --card-radius: 12px;
+      --muted: #666;
+      --accent: #333;
+      --surface: #fff;
     }
 
-    .project-hero {
-      width: 100%;
-      max-height: 300px;
-      max-width: 300px;
-      margin: 40px 0;
-      border-radius: 12px;
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: var(--accent);
+      background: #fafafa;
+      line-height: 1.6;
     }
 
-    .process-section {
-      margin: 60px 0;
+    /* Compact icon + text nav (Option B) */
+    .top-nav {
+      display:flex;
+      justify-content: flex-end;
+      gap: 14px;
+      padding: 18px 24px;
+      background: white;
+      border-bottom: 1px solid #eee;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    .process-gallery {
+    .nav-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.15s ease, transform 0.08s ease;
+    }
+
+    .nav-item img {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .nav-item:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+    }
+
+    /* Page container and narrow card styling */
+    .page-wrap {
       display: flex;
+      justify-content: center;
+      padding: 28px 20px 80px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: var(--card-max-width);
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      box-shadow: 0 10px 30px rgba(20,20,20,0.04);
+      padding: 36px;
+      margin: 24px 0;
+    }
+
+    .card + .card {
+      margin-top: 18px;
+    }
+
+    .hero-wrap {
+  width: 100%;
+  max-height: 420px;        /* controls visible size across pages */
+  display: flex;
+  justify-content: center;  /* centers odd-sized images */
+  align-items: center;
+  overflow: hidden;          /* hides extra whitespace if tall */
+  margin: 18px 0 6px;
+}
+
+.project-hero {
+  width: 100%;
+  height: auto;              /* keeps aspect ratio */
+  object-fit: contain;       /* NO CROPPING */
+  max-height: 420px;         /* keeps page layout consistent */
+}
+
+
+    .project-title {
+      display:flex;
+      flex-direction: column;
+      gap:6px;
+      margin-bottom: 6px;
+    }
+
+    .project-title h1 {
+      font-size: 2rem;
+      margin: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .project-sub {
+      color: var(--muted);
+      font-weight: 300;
+      font-size: 0.95rem;
+      text-transform: none;
+    }
+
+    /* Two-column info bar */
+    .info-bar {
+      display: flex;
+      gap: 18px;
       flex-wrap: wrap;
-      gap: 20px;
+      margin-top: 14px;
+    }
+
+    .info-item {
+      flex: 1 1 220px;
+      min-width: 180px;
+      background: #fbfbfb;
+      border-radius: 10px;
+      padding: 12px 14px;
+      border: 1px solid #f0f0f0;
+    }
+
+    .info-item h4 {
+      margin: 0 0 6px 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .info-item p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* Section headings */
+    .section-head {
+      margin-top: 6px;
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    /* Text blocks */
+    .copy {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 820px;
+      height: 420px;
+      margin: 18px auto 0;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #111; /* shows as frame while images load */
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      margin: auto;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 12px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      background-color: rgba(0,0,0,0.35);
+      border-radius: 6px;
+      user-select: none;
+      z-index: 10;
+    }
+
+    .next { right: 12px; }
+    .prev { left: 12px; }
+
+    .prev:hover, .next:hover { background: rgba(0,0,0,0.55); }
+
+    /* CTA & media */
+    .center-row {
+      display:flex;
+      justify-content:center;
+      gap:12px;
       margin-top: 20px;
     }
 
-    .process-img {
-      flex: 1 1 300px;
-      max-width: 50%;
-      max-height: 50%;
+    .cta-button {
+      padding: 12px 20px;
       border-radius: 8px;
-      height: 200px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      text-decoration: none;
+      font-weight: 600;
     }
 
-    .text-block {
-      max-width: 800px;
-      margin: 0 auto 60px;
-      font-size: 1.1em;
-      line-height: 1.8;
-      color: #444;
+    .video-wrapper {
+      display:flex;
+      justify-content:center;
+      padding: 18px 0 0;
     }
 
-    @media (max-width: 768px) {
-      .process-img {
-        height: 180px;
-      }
-    }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    video {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     }
 
-    .project-header {
-      animation: fadeIn 0.8s ease-out forwards;
+    /* Responsive */
+    @media (max-width: 900px) {
+      .card { padding: 20px; }
+      .project-title h1 { font-size: 1.6rem; }
+      .slideshow-container { height: 300px; }
     }
-    .slideshow-container {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  height: 400px;
-  margin: 40px auto;
-  overflow: hidden;
-  border-radius: 12px;
-}
 
-.slide {
-  display: none;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
+    @media (max-width: 520px) {
+      .top-nav { padding: 12px 14px; }
+      .nav-item span { display: none; } /* hide text if needed on very small screens */
+      .info-bar { flex-direction: column; }
+      .project-hero { max-height: 260px; object-position: center; }
+      .slideshow-container { height: 240px; }
+    }
 
-.slide img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  width: auto;
-  height: auto;
-  margin: auto;
-  display: block;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Arrows */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 22px;
-  background-color: rgba(0,0,0,0.5);
-  border-radius: 3px;
-  user-select: none;
-  z-index: 10;
-  transition: background-color 0.3s;
-}
-
-.next {
-  right: 0;
-}
-
-.prev {
-  left: 0;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
+    /* utility: muted small text */
+    .muted { color: var(--muted); font-size: 0.95rem; }
   </style>
 </head>
+
 <body>
-  <nav>
-      <ul style="list-style: none; padding: 20px 40px; margin: 0; display: flex; gap: 40px; border-bottom: 1px solid #eee; justify-content: flex-end;">
-        <li><a href="index.html" style="text-decoration: none; color: #333; font-weight: 500; letter-spacing: 0.05em;">Home</a></li>
-        <div style="display: flex; gap: 20px; align-items: center;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <img src="pdf.png" alt="pdf" style="width: 15px; height: 20px;">
-            <li><a href="benhare_resume_2025.pdf" style="text-decoration: none; color: #333; font-weight: 500; letter-spacing: 0.05em;">Resume</a></li>
+
+  <!-- Top navigation (compact icons + text) -->
+  <header class="top-nav" role="navigation" aria-label="Top navigation">
+    <!-- Home -->
+    <a class="nav-item" href="index.html" aria-label="Home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+      <span>Home</span>
+    </a>
+  
+    <!-- Projects -->
+    <a class="nav-item" href="projects.html" aria-label="All Projects">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M3 4h18v2H3V4zm0 4h18v2H3V8zm0 4h12v2H3v-2zm0 4h12v2H3v-2z"/>
+      </svg>
+      <span>Projects</span>
+    </a>
+  
+    <!-- Resume -->
+    <a class="nav-item" href="benhare_resume_2025.pdf" aria-label="Resume">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm9 0v5h5"/>
+      </svg>
+      <span>Resume</span>
+    </a>
+  
+    <!-- LinkedIn -->
+    <a class="nav-item" href="https://www.linkedin.com/in/benjamin-hare-a34074296/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="18" height="18" fill="currentColor">
+       <path d="M218.123 218.127h-38.41v-59.41c0-14.17-.253-32.386-19.73-32.386-19.76 0-22.78 15.445-22.78 31.39v60.406h-38.41V96h36.86v16.68h.53c5.13-9.72 17.68-19.95 36.4-19.95 38.93 0 46.1 25.63 46.1 58.98v66.42zM56.243 79.314c-12.337 0-22.32-9.985-22.32-22.32 0-12.338 9.983-22.323 22.32-22.323 12.336 0 22.32 9.985 22.32 22.322 0 12.336-9.984 22.32-22.32 22.32zM75.46 218.127h-38.43V96H75.46v122.127zM239.58 0H16.36C7.32 0 0 7.22 0 16.14v223.72C0 248.78 7.32 256 16.36 256h223.22c9.05 0 16.36-7.22 16.36-16.14V16.14C255.94 7.22 248.63 0 239.58 0z"/>
+      </svg>
+      <span>LinkedIn</span>
+    </a>
+  </header>
+  
+
+  <!-- Main content centered -->
+  <div class="page-wrap">
+    <main class="content" style="width:100%; max-width:var(--card-max-width);">
+
+      <!-- HERO CARD -->
+      <article class="card" aria-labelledby="project-title">
+        <div class="project-title">
+          <h1 id="project-title">Smart Thermostat Wireframe</h1>
+          <div class="project-sub">Wireframe for a smart thermostat concept</div>
+        </div>
+        <div class="hero-wrap">
+        <img src="thermoproto.png" alt="Thermostat wireframe hero photo" class="project-hero">
+        </div>
+        <!-- Info bar: role, timeline, skills -->
+        <div class="info-bar" aria-hidden="false">
+          <div class="info-item">
+            <h4>Role</h4>
+            <p>Designer, builder — concept, prototyping</p>
           </div>
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <img src="linkedin.png" alt="linkedin" style="width: 15px; height: 20px;">
-            <li><a href="https://www.linkedin.com/in/benjamin-hare-a34074296/" style="text-decoration: none; color: #333; font-weight: 500; letter-spacing: 0.05em;">LinkedIn</a></li>
+          <div class="info-item">
+            <h4>Tools & Skills</h4>
+            <p>Wireframing, Figma, user research</p>
           </div>
         </div>
-      </ul> 
-  </nav>
+      </article>
 
-  <main>
-    <section class="project-header">
-      <h1>Smart Thermostat Wireframe</h1>
-      <p>Wireframe for a smart thermostat made for my Interaction Design Studio class.</p>
-      <img src="thermoproto.png" alt="Main Project Visual" class="project-hero">
-    </section>
+      <!-- OVERVIEW CARD -->
+      <section class="card" aria-labelledby="overview-heading">
+        <h3 id="overview-heading" class="section-head">Overview</h3>
+        <p class="copy">
+          The VALE Jukebox is a compact, interactive display designed to increase awareness of the VALE Music Group among prospective students. Visitors insert a physical cartridge to trigger a short audio clip, creating an approachable, participatory experience that showcases student work and encourages exploration.
+        </p>
+      </section>
 
-    <section class="text-block">
-      <h2>Project Overview</h2>
-      <p>This project was assigned in my "Interaction Design Studio" class and was meant to teach us how to effectively demonstrates changes in state when it comes to digital interfaces. Our goal was to design a thermostat for a smart home with at least 3 different options and use different signifers to communicate the change in state to the user.</p>
-    </section>
+      <!-- PROBLEM & GOALS CARD -->
+      <section class="card" aria-labelledby="problem-heading">
+        <h3 id="problem-heading" class="section-head">Problem & Goals</h3>
+        <p class="copy"><strong>Problem:</strong> VALE’s work is not visible to most prospective students during campus visits.</p>
+        <p class="copy"><strong>Goals:</strong> create an inviting, low-friction exhibit that: 1) attracts attention, 2) encourages interaction, and 3) surfaces VALE music quickly and memorably.</p>
+      </section>
 
-    <section class="process-section">
-      <div class="text-block">
-        <h2>Design Process</h2>
-        <p style="font-weight: bold;">Ideation:</p>
-        <ul>
-          <li>
-            Since there are a large number of smart thermostats on the market, the ideation process for this project was fairly simple, as I just needed to include at least 3 different states that many thermostats already have built in and make sure that is still functions correctly as a thermostat.
-          </li>
-          <li>
-            The difficulty came with deciding which kinds of signals I wanted to include in the design. I wanted to make sure that users were able to perceive changes in state from a long distance since they would likely not want to walk over to their thermostat just to see what mode it is in.
-          </li>
-        </ul>
-        <p style="font-weight: bold;">Research:</p>
-        <ul>
-          <li>
-            Research was an important step in this project because I was unfamiliar with how thermostats worked and wanted to make sure that I included the correct functions on it.
-          </li>
-          <li>
-            I also looked into different ways to save money with heating since our professor wanted us to make that a priority in our design. My research indicated that the best way to save money is to use less power on their thermostat when the user is out of the house or sleeping.
-          </li>
-        </ul>
-        <p style="font-weight: bold;">Brainstorming:</p>
-        <ul>
-          <li>
-            After some consideration, I figured that a combination of symbols and color would be most effective in signifying state since different colors invoke different emotions in people and can be easily understood by a wide range of audiences.
-          </li>
-          <li>
-            The 3 modes that I decided to include were "Indoor Mode", "Outdoor Mode" and "Sleep Mode". "Indoor Mode" shows the indoor temperature and can be changed at any point. "Outdoor Mode" displays the current temperature outside to let the user know what they should set their internal temperature to. Lastly, "Sleep Mode" allows the user to set the temperature to go up or down at a certain time, typically when they are asleep, in order to save money.
-          </li>
-        </ul>
-        <p style="font-weight: bold;">Prototype:</p>
-        <ul>
-          <li>
-            The wireframe for this product consists of an LED screen that functions as the main display, a power button on the right side, arrow buttons on the left side to increase or decrease the temperature, 3 buttons on the bottom with icons to change between the 3 different modes, and a tip button to provide tips for each of the modes.
-          </li>
-          <li>
-            Color is used as the primary signifier with a neutral gray color for "Indoor Mode", a light blue color for "Outdoor Mode" and a dark teal color for "Sleep Mode".
-          </li>
-          <li>
-            The main purpose of this device is to help users save money on their heating bill by recommending temperatures to set their house to based on the current temperature outside.
-          </li>
-        </ul>
-      </div>
-      
-    </section>
+      <!-- PROCESS CARD (medium length) -->
+      <section class="card" aria-labelledby="process-heading">
+        <h3 id="process-heading" class="section-head">Process</h3>
 
-    <section class="text-block">
-      <h2>Final Outcome</h2>
-      <p>The final version of this wireframe turned out well and included all of the criteria for the project. This project taught me the importance of signifiers and changes in state, which I continue to use in many of the designs I make today. It helped develop the skills needed for empathizing with users and designing in a way that will benefit them the most.</p>
-      
-    </section>
-  </main>
-  <section id="projects-physical">
-    <h2 class="section-title">Physical Projects</h2>
-    <div class="project-grid">
-      <a href="jukebox.html" class="project-link">
-        <div class="project">
-          <img src="jukebox.jpg" alt="Vale Jukebox" class="project-img">
-          <div>
-            <h3>VALE Jukebox</h3>
-            <p>Mini Jukebox designed to promote the VALE Music Group at Lebanon Valley College.</p>
-          </div>
+        <div>
+          <h4 class="muted">Research & Ideation</h4>
+          <p class="copy">I reviewed examples of participatory museum exhibits and prioritized a tactile interaction that could be experienced by a single visitor or small group. Jukebox metaphors naturally supported social discovery and repeat interaction.</p>
         </div>
-      </a>
-      
-      <a href="toy.html" class="project-link">
-        <div class="project">
-          <img src="KidToy.png" alt="Children's Toy" class="project-img">
-          <div>
-            <h3>Children's Toy Project</h3>
-            <p>Prototype for a project where we were tasked with designing a children's toy.</p>
-          </div>
+
+        <div style="margin-top:12px;">
+          <h4 class="muted">Prototype & Build</h4>
+          <p class="copy">I prototyped a cube-shaped form for novelty and practicality. Technically, I mapped NFC chip IDs to MP3 files on a Raspberry Pi and wrote a small Python script to read tags and play audio. The enclosure was laser-cut from acrylic; cartridges were laser-engraved cardboard with embedded NFC chips.</p>
         </div>
-      </a>
-      
+
+        <div style="margin-top:12px;">
+          <h4 class="muted">Refinement</h4>
+          <p class="copy">After testing, I improved the cartridge fit and adjusted audio levels for an ambient campus environment. The final build demonstrated a robust, headless playback flow on boot.</p>
+        </div>
+      </section>
+
+      <!-- OUTCOME + VIDEO CARD -->
+      <section class="card" aria-labelledby="outcome-heading">
+        <h3 id="outcome-heading" class="section-head">Outcome</h3>
+        <p class="copy">The final VALE Jukebox was functional, engaging, and compact enough for placement in public campus spaces. It succeeded in surfacing VALE music in an approachable way and demonstrated my ability to combine physical fabrication with simple electronics and scripting. Next steps would focus on improving cartridge durability and streamlining production for multiple units.</p>
+      </section>
+
+      <!-- RELATED CTA card -->
+      <aside class="card" aria-labelledby="more-heading">
+        <h3 id="more-heading" class="section-head">Explore More Projects</h3>
+        <p class="copy">See the rest of my work for other physical and digital projects.</p>
+        <div class="center-row" style="margin-top:12px;">
+          <a class="cta-button" href="projects.html">All Projects</a>
+          <a class="cta-button" href="index.html">Back to Home</a>
+        </div>
+      </aside>
+
+    </main>
+  </div>
+
+  <footer style="text-align:center; padding:28px 20px; color:var(--muted); font-size:0.95rem;">
+    <div style="max-width:var(--card-max-width); margin:0 auto;">
+      <p><strong>Email:</strong> bhare0414@gmail.com &nbsp; • &nbsp; <strong>Phone:</strong> (717) 884-1448</p>
+      <p style="margin-top:6px;">&copy; 2025 Ben Hare — All rights reserved.</p>
     </div>
-  </section>
-  <section id="projects-digital">
-    <h2 class="section-title">Digital Projects and Wireframes</h2>
-
-    <div class="project-grid">
-      <a href="compostconnect.html" class="project-link">
-        <div class="project">
-          <img src="compostconnect.jpg" alt="Compost Connect" class="project-img">
-          <div>
-            <h3>Compost Connect</h3>
-            <p>An app designed for my capstone project that teaches users about composting through bite-sized lessons.</p>
-          </div>
-        </div>
-      </a>
-
-        <a href="doorbud.html" class="project-link">
-          <div class="project">
-            <img src="DoorBud.png" alt="DoorBud" class="project-img">
-            <div>
-              <h3>DoorBud</h3>
-              <p>Wireframe for a fun alternative to a smart doorbell.</p>
-            </div>
-          </div>
-        </a>
-        <a href="jeopardy.html" class="project-link">
-          <div class="project">
-            <img src="jeopardy.png" alt="Disney Jeopardy" class="project-img">
-            <div>
-              <h3>Disney Jeopardy</h3>
-              <p>Web-based Jeopardy game made for my Web Design class that tests the user's knowledge of Disney movies.</p>
-            </div>
-          </div>
-        </a>
-        <a href="thermostat.html" class="project-link">
-          <div class="project">
-            <img src="thermoproto.png" alt="Smart Thermostat Wireframe" class="project-img">
-            <div>
-              <h3>Smart Thermostat Wireframe</h3>
-              <p>Wireframe for a smart thermostat made for my Interaction Design Studio class.</p>
-            </div>
-          </div>
-        </a>
-        <a href="socialvideos.html" class="project-link">
-          <div class="project">
-            <img src="socialvideo.png" alt="LVC Social Media Interviews" class="project-img">
-            <div>
-              <h3>LVC Social Media Interviews</h3>
-              <p>Videos that I was asked to edit during my internship.</p>
-            </div>
-          </div>
-        </a>
-  </section>
-  <section id="projects-graphic">
-    <h2 class="section-title">Graphic Design Projects</h2>
-    <div class="project-grid">
-      <a href="careerpamphlet.html" class="project-link">
-        <div class="project">
-            <img src="pamphletcover.jpeg" alt="Career Center Pamphlets" class="project-img">
-          <div>
-            <h3>Career Center Pamphlets</h3>
-            <p>During my internship, I was asked to redesign pamphlets offered by my school's career center.</p>
-          </div>
-        </div>
-      </a>
-      <a href="mariokartpamphlet.html" class="project-link">
-        <div class="project">
-            <img src="pamphlet.png" alt="Mario Kart 8 Pamphlet" class="project-img">
-            <div>
-             <h3>Mario Kart 8 Pamphlet</h3>
-              <p>Pamphlet that teaches players the basics of playing the video game "Mario Kart 8".</p>
-            </div>
-          </div>
-        </a>
-        <a href="zoologo.html" class="project-link">
-          <div class="project">
-            <img src="color_logo.jpg" alt="Zoo Logo" class="project-img">
-            <div>
-              <h3>Zoo Logo</h3>
-              <p>Zoo Logo designed for my graphic design class.</p>
-            </div>
-          </div>
-        </a>
-      </div>  
-  </section>
-  <footer>
-    <p>
-      <strong>Email:</strong> bhare0414@gmail.com<br>
-      <strong>Phone:</strong> (717)884-1448
-    </p>
-    &copy; 2025 Ben Hare – All rights reserved.
   </footer>
+
+  <!-- Slideshow JS (keeps previous behavior, with autoplay helper) -->
   <script>
     let slideIndex = 1;
-    showSlides(slideIndex);
-  
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-  
+    let slideshowInterval = null;
+    const slides = () => document.getElementsByClassName("slide");
+
     function showSlides(n) {
-      let i;
-      const slides = document.getElementsByClassName("slide");
-      if (n > slides.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = slides.length }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+      const s = slides();
+      if (!s || s.length === 0) return;
+      if (n > s.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = s.length; }
+      for (let i = 0; i < s.length; i++) {
+        s[i].style.display = "none";
       }
-      slides[slideIndex - 1].style.display = "block";
+      s[slideIndex - 1].style.display = "block";
     }
-  </script>  
+
+    function plusSlides(n) {
+      slideIndex += n;
+      showSlides(slideIndex);
+      // stop autoplay when user interacts
+      stopAutoplay();
+    }
+
+    // basic autoplay helper (optional)
+    function startAutoplay() {
+      stopAutoplay();
+      slideshowInterval = setInterval(function() {
+        slideIndex++;
+        showSlides(slideIndex);
+      }, 3000);
+    }
+
+    function stopAutoplay() {
+      if (slideshowInterval) {
+        clearInterval(slideshowInterval);
+        slideshowInterval = null;
+      }
+    }
+
+    // initialize
+    document.addEventListener("DOMContentLoaded", function() {
+      showSlides(slideIndex);
+      // pause autoplay on mobile to avoid data/battery use; start only on desktop
+      if (window.innerWidth > 900) {
+        // optional: startAutoplay();
+      }
+    });
+
+    // pause autoplay when tab is hidden
+    document.addEventListener("visibilitychange", function() {
+      if (document.hidden) stopAutoplay();
+    });
+
+    // make video responsive height: limit width as needed in CSS; set fallback size here
+    const vid = document.querySelector("video");
+    if (vid) {
+      vid.setAttribute("width", "100%");
+      vid.setAttribute("height", "auto");
+    }
+  </script>
+
 </body>
 </html>
